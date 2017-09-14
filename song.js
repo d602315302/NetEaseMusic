@@ -6,10 +6,24 @@ $(function () {
         let songs = response
         let song = songs.filter(s => s.id === id)[0]
         let {
-            url
+            url,
+            name,
+            lyric
         } = song
+
+        initPlayer.call(undefined,url)
+        initText.call(undefined,name,lyric)
+    })
+
+    function initText(name,lyric){
+        console.log(lyric)
+        $('.song-description > h1').text(name)
+        parseLyric.call(undefined,lyric)        
+    }
+
+    function initPlayer(url) {
         let audio = document.createElement('audio')
-        audio.src=url
+        audio.src = url
         audio.oncanplay = function () {
             audio.play()
             $('.disc-container').addClass('playing')
@@ -22,12 +36,9 @@ $(function () {
             audio.play()
             $('.disc-container').addClass('playing')
         })
-    })
+    }
 
-    $.get('/lyric.json').then(function (object) { //拿到JSON对象
-        let {
-            lyric
-        } = object
+    function parseLyric(lyric){
         let array = lyric.split('\n') //歌词进行分割（时间+歌词）
         let regex = /^\[(.+)\](.*)$/ //歌词标准 
         array = array.map(function (string, index) { //map每一句歌词   
@@ -45,5 +56,5 @@ $(function () {
             $p.attr('data-time', object.time).text(object.words)
             $p.appendTo($lyric.children('.lines'))
         })
-    })
+    }
 })

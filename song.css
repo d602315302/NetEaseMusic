@@ -71,17 +71,20 @@
 .disc-container .light {
     width: 75vw;
     position: absolute;
+    animation: circle 20s infinite linear;
 }
 
 .disc-container .cover {
     width: 46vw;
     position: absolute;
     border-radius: 50%;
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
 }
 
 .disc-container.playing .light,
 .disc-container.playing .cover {
-    animation: circle 20s infinite linear;
+    animation-play-state: running;
 }
 
 .disc-container .icon-pause {
