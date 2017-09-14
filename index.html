@@ -80,17 +80,23 @@
     </section>
     <section class="lastestMusic">
         <h2>最新音乐</h2>
-        <ol>
+        <p id="lastestMusicloading">
+            <img src="./images/loading.gif" alt="">
+        </p>
+
+        <!-- <ol>
             <li>
-                <h3>歌曲名1</h3>
-                <p>
-                    <svg class="playSQ">
-                        <use xlink:href="#icon-SQ"></use>
-                    </svg>演唱者1-专辑1</p>
-                <a href="#">
-                    <svg class="playCircled">
-                        <use xlink:href="#icon-play-circled"></use>
-                    </svg>
+                <a href="./song.html">
+                    <h3>歌曲名1</h3>
+                    <p>
+                        <svg class="playSQ">
+                            <use xlink:href="#icon-SQ"></use>
+                        </svg>演唱者1-专辑1</p>
+                    <a href="#">
+                        <svg class="playCircled">
+                            <use xlink:href="#icon-play-circled"></use>
+                        </svg>
+                    </a>
                 </a>
             </li>
             <li>
@@ -201,7 +207,8 @@
                     </svg>
                 </a>
             </li>
-        </ol>
+        </ol> -->
+        <ol id="lastestMusic"></ol>
     </section>
     <section class="art">
         <div class="logo">
@@ -244,6 +251,8 @@
         </div>
     </section>
     <script src="//at.alicdn.com/t/font_415271_8er1tj8pvd706bt9.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>

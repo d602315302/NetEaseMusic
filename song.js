@@ -1,4 +1,29 @@
 $(function () {
+
+    let id = parseInt(location.search.match(/\bid=([^&])*/)[1], 10)
+
+    $.get('./songs.json').then(function (response) {
+        let songs = response
+        let song = songs.filter(s => s.id === id)[0]
+        let {
+            url
+        } = song
+        let audio = document.createElement('audio')
+        audio.src=url
+        audio.oncanplay = function () {
+            audio.play()
+            $('.disc-container').addClass('playing')
+        }
+        $('.icon-pause').on('click', function () {
+            audio.pause()
+            $('.disc-container').removeClass('playing')
+        })
+        $('.icon-play').on('click', function () {
+            audio.play()
+            $('.disc-container').addClass('playing')
+        })
+    })
+
     $.get('/lyric.json').then(function (object) { //拿到JSON对象
         let {
             lyric
@@ -20,20 +45,5 @@ $(function () {
             $p.attr('data-time', object.time).text(object.words)
             $p.appendTo($lyric.children('.lines'))
         })
-    })
-
-    let audio = document.createElement('audio')
-    audio.src = '//ow8dqryc5.bkt.clouddn.com/C4000027zPYs3A9fyb.m4a'
-    audio.oncanplay = function () {
-        audio.play()
-        $('.disc-container').addClass('playing')
-    }
-    $('.icon-pause').on('click',function(){
-        audio.pause()
-        $('.disc-container').removeClass('playing')
-    })
-    $('.icon-play').on('click',function(){
-        audio.play()
-        $('.disc-container').addClass('playing')
     })
 })

@@ -127,7 +127,9 @@ section>h2:first-child {
 .lastestMusic {
     margin-top: 5.9vw;
 }
-
+.lastestMusic>p{
+    text-align: center;
+}
 .lastestMusic>ol {
     margin-top: 4vw;
     padding-left: 2.9vw;
@@ -138,12 +140,14 @@ section>h2:first-child {
     padding: 1.6vw 0;
     position: relative;
 }
-
-.lastestMusic>ol>li>h3 {
+.lastestMusic>ol>li a{
+    color: inherit;
+}
+.lastestMusic>ol>li h3 {
     font-size: 4.53vw;
 }
 
-.lastestMusic>ol>li>p {
+.lastestMusic>ol>li p {
     font-size: 3.2vw;
     color: #888;
     display: flex;
