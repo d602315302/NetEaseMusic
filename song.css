@@ -72,6 +72,7 @@
     width: 75vw;
     position: absolute;
     animation: circle 20s infinite linear;
+    animation-play-state: paused;
 }
 
 .disc-container .cover {
@@ -106,7 +107,9 @@
     line-height: 2;
     margin-top: 20px;
 }
-
+.song-description .lines{
+    transition: transform 0.3s;
+}
 .song-description h1 {
     color: white;
     font-size: 18px;
@@ -116,7 +119,9 @@
     font-size: 14px;
     line-height: 24px;
 }
-
+.song-description p.active{
+    color:white;
+}
 .song-description .lyric {
     height: 72px;
     overflow: hidden;
