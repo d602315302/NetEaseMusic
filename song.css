@@ -76,7 +76,11 @@
 
 .disc-container .light {
     width: 75vw;
-    position: absolute;    
+    position: absolute;   
+    top:50%;
+    left:50%;
+    margin-top: -37.5vw;
+    margin-left: -37.5vw;
     animation: circle 20s infinite linear;
     animation-play-state: paused;
 }
