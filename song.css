@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: transparent url('//p4.music.126.net/di0eeZaWQYcGGgMPMCM_bw==/18147439417259923.jpg') no-repeat center;
+    background: transparent url('//p4.music.126.net/di0eeZaWQYcGGgMPMCM_bw==/18147439417259923.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -32,6 +32,9 @@
 
 .disc-container .icon-wrapper {
     position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -56,6 +59,7 @@
     width: 24vw;
     position: absolute;
     left: 45vw;
+    z-index: 1;
 }
 
 .disc-container .disc {
@@ -63,6 +67,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 18vw;
+    position: relative;
 }
 
 .disc-container .ring {
@@ -79,6 +84,10 @@
 .disc-container .cover {
     width: 46vw;
     position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: -23vw;
+    margin-left: -23vw;
     border-radius: 50%;
     animation: circle 20s infinite linear;
     animation-play-state: paused;
