@@ -71,13 +71,12 @@
 
 .disc-container .light {
     width: 75vw;
-    position: absolute;
+    position: absolute;    
     animation: circle 20s infinite linear;
     animation-play-state: paused;
 }
 
 .disc-container .cover {
-    border:1px solid red;
     width: 46vw;
     position: absolute;
     border-radius: 50%;
