@@ -1,19 +1,27 @@
 $(function () {
-
-    let id = parseInt(location.search.match(/\bid=([^&])*/)[1], 10)
-
+let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10)
+    console.log(id)
+    console.log(location.search.match(/\bid=([^&])*/))
     $.get('./songs.json').then(function (response) {
         let songs = response
         let song = songs.filter(s => s.id === id)[0]
         let {
             url,
             name,
-            lyric
+            lyric,
+            imgBig,
+            imgSmall
         } = song
-
+        initImg.call(undefined,imgBig,imgSmall)        
         initPlayer.call(undefined, url)
         initText.call(undefined, name, lyric)
     })
+
+    function initImg(imgBig,imgSmall){
+        $('.page').css('background',`transparent url('${imgBig}') no-repeat center center`)
+        $('.page').css('background-size','cover')
+        $('.cover').attr('src',`${imgSmall}`)
+    }
 
     function initText(name, lyric) {
         $('.song-description > h1').text(name)
