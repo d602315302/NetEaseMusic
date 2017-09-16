@@ -1,7 +1,5 @@
 $(function () {
 let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10)
-    console.log(id)
-    console.log(location.search.match(/\bid=([^&])*/))
     $.get('./songs.json').then(function (response) {
         let songs = response
         let song = songs.filter(s => s.id === id)[0]

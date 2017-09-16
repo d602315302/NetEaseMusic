@@ -1,4 +1,6 @@
 $(function () {
+    console.log('滴滴滴滴')
+    $('#searchSong').focus()
     $.get('./songs.json', function (response) {
         let items = response
         items.forEach((i) => {
@@ -9,7 +11,7 @@ $(function () {
                 <p>
                     <svg class="playSQ">
                         <use xlink:href="#icon-SQ"></use>
-                    </svg>演唱者1-专辑1</p>
+                    </svg>${i.singer}-${i.special}</p>
                 <a href="./song.html?id=${i.id}">
                     <svg class="playCircled">
                         <use xlink:href="#icon-play-circled"></use>
@@ -37,11 +39,7 @@ $(function () {
         }
         $li.attr('data-downloaded', 'yes')
         if (index === 1) {
-            // return
             $.get('./songs.json').then((response) => {
-                // $li.find('ol').children().text(response.content)
-                // $li.text(response.content)
-                console.log(response)
                 let items = response
                 items.forEach((i) => {
                     let $li = $(`
@@ -52,7 +50,7 @@ $(function () {
                         <p>
                             <svg class="playSQ">
                                 <use xlink:href="#icon-SQ"></use>
-                            </svg>演唱者1-专辑1</p>
+                            </svg>${i.singer} - ${i.special}</p>
                         <a href="./song.html?id=${i.id}">
                             <svg class="playCircled">
                                 <use xlink:href="#icon-play-circled"></use>
@@ -70,11 +68,17 @@ $(function () {
             console.log('搜索页')
             $('#searchSong').focus()
             console.log('哈哈哈')
-            // return
-            // $.get('./page3.json').then((response) => {
-            //     $li.text(response.content)
-            //     $li.attr('data-downloaded', 'yes')
-            // })
+            $.get('./songs.json').then(function(response){
+                response.forEach((i)=>{
+                    let $li=$(`
+                    <li>
+                        <a href="./song.html?id=${i.id}">${i.name}</a>
+                    </li>
+                    `)
+                    $('#hotSearchContent').append($li)
+                    $li.attr('data-downloaded', 'yes')
+                })
+            })
         }
     })
 
@@ -85,6 +89,7 @@ $(function () {
         $('.hotSearch').css('display', 'none')
         $('#searchContent').css('display', 'block')
         $('#output>ul>li').remove()
+        $('#output>p').text('')        
         let $input = $(e.currentTarget)
         let value = $input.val().trim()
         $('#searchContent').text('搜索:"' + value + '"')
@@ -101,13 +106,10 @@ $(function () {
             clearTimeout(timer)
         }
         timer = setTimeout(function () {
+            $('#output').css('display','block')
             search(value).then((result) => {
                 timer = undefined
                 if (result.length !== 0) {
-                    console.log(result)
-                    // $('#output p').text(result.map((song) => song.name).join(','))
-                    // let $name=result.map((song)=>song.name)
-
                     result.forEach((i) => {
                         let $li = $(`
                         <li>
@@ -120,9 +122,11 @@ $(function () {
                         </li>
                         `)
                         $('#output>ul').append($li)
+                        $('#output>p').css('display','none')
                     })
                 } else {
-                    $('#output p').text('模拟数据，所以只有那么几首歌')
+                    $('#output>p').css('display','block')  
+                    $('#output>p').text('模拟数据，所以只有那么几首歌~~~~')
                 }
             })
         }, 1000)
@@ -151,7 +155,7 @@ $(function () {
                 },
                 {
                     "id": 3,
-                    "name": "Despacito(Remix)"
+                    "name": "Despacito"
                 },
                 {
                     "id": 4,
@@ -159,7 +163,27 @@ $(function () {
                 },
                 {
                     "id": 5,
-                    "name": "讲不出再见-Live"
+                    "name": "讲不出再见"
+                },
+                {
+                    "id": 6,
+                    "name": "成都"
+                },
+                {
+                    "id": 7,
+                    "name": "I'm Yours"
+                },
+                {
+                    "id": 8,
+                    "name": "Million Reasons"
+                },
+                {
+                    "id": 9,
+                    "name": "Faith"
+                },
+                {
+                    "id": 10,
+                    "name": "富士山下"
                 }
             ]
             let result = database.filter((item) => {

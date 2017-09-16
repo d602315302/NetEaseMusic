@@ -1,0 +1,37 @@
+[{
+        "id": "1",
+        "title": "古装影视相思曲，如诗情感如画意",
+        "imgBig": "./images/recommend/1_bg.png",
+        "imgSmall": "./images/recommend/1_sm.png"
+    },
+    {
+        "id": "2",
+        "title": "你眼里有星星，那是足以将夜空都点亮的光芒",
+        "imgBig": "./images/recommend/2_bg.png",
+        "imgSmall": "./images/recommend/2_sm.png"
+    },
+    {
+        "id": "3",
+        "title": "暖声柔语和千疮百孔的心",
+        "imgBig": "./images/recommend/3_bg.png",
+        "imgSmall": "./images/recommend/3_sm.png"
+    },
+    {
+        "id": "4",
+        "title": "【伤感华语】 回忆是所有心痛的根源。",
+        "imgBig": "./images/recommend/4_bg.png",
+        "imgSmall": "./images/recommend/4_sm.png"
+    },
+    {
+        "id": "5",
+        "title": "韩剧中的英文插曲合集【2017】",
+        "imgBig": "./images/recommend/5_bg.png",
+        "imgSmall": "./images/recommend/5_sm.png"
+    },
+    {
+        "id": "6",
+        "title": "GAI的江湖说唱，周延的暴力城乡",
+        "imgBig": "./images/recommend/6_bg.png",
+        "imgSmall": "./images/recommend/6_sm.png"
+    }
+]

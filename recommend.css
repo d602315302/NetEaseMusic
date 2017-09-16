@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 10vw;
+}
+
+header {
+    background: transparent url('./images/recommend/1_bg.png') no-repeat center;
+    background-size: cover;
+    padding: 8vw 3vw;
+}
+
+header>.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 4vw;
+}
+
+header>.titleWrapper>img {
+    width: 33vw;
+}
+
+header>.titleWrapper>div {
+    margin-left: 5vw;
+    color: white;
+}
+
+header>.titleWrapper>div>a {
+    display: block;
+    position: relative;
+}
+header>.titleWrapper>div>.user{
+    overflow: hidden;
+    margin-top: 5vw;
+    display:flex;
+    align-items: center;
+    color:#ccc;
+}
+header>.titleWrapper>div .headPortrait {
+    width: 8vw;
+    border-radius: 50%;
+}
+.intro{
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#666;
+    padding:3vw 4vw;
+}
+.intro>.label{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+.intro>.introContent{
+    display: block;
+    padding:3vw 5vw 0 0;
+
+}
+.intro>.introContent>h4{
+
+    display: inline;
+}
+.intro>.introContent>p{
+    /* display:inline; */
+    display: -webkit-box;
+    height: 17.5vw;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.intro>.label>ul>li{
+    font-size: 3vw;
+    float: left;
+    border:1px solid #DFDFDF;
+    border-radius: 3vw;
+    margin-left:2vw;
+    padding:0 1vw;
+}
+#songsList>h4{
+    font-size: 3vw;
+    background:#EEEFF0;
+    color:#666;
+    padding:0.5vw 2vw;
+}
+
+.lastestMusic {
+    margin-top: 5.9vw;
+}
+
+.lastestMusic p {
+    text-align: center;
+}
+
+.lastestMusic>ol {
+    margin-top: 4vw;
+    padding-left: 2.9vw;
+}
+
+.lastestMusic>ol>li {
+    border-bottom: 1px solid #EFEFF0;
+    padding: 1.6vw 0;
+    position: relative;
+    display:flex;
+    align-items: center;
+}
+
+.lastestMusic>ol>li a {
+    color: inherit;
+}
+
+.lastestMusic>ol>li h3 {
+    font-size: 4.53vw;
+}
+
+.lastestMusic>ol>li p {
+    font-size: 3.2vw;
+    color: #888;
+    display: flex;
+    line-height: 1;
+    margin: 0.7vw 0;
+    align-items: center;
+}
+
+.lastestMusic>ol>li svg.playCircled {
+    width: 6.2vw;
+    height: 6.2vw;
+    fill: #AAAAAA;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5vw;
+}
+
+.lastestMusic>ol>li svg.playSQ {
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-right: 0.5vw;
+    fill: #FE672E;
+}
+
+.lastestMusic.hot>#recommend{
+    margin:0;
+    padding-bottom: 16vw;
+}
+.lastestMusic.hot>#recommend>li>span{
+    color:#999;
+    font-size: 4vw;
+    margin-left:2vw;
+    margin-right:5vw;
+}
+.lastestMusic.hot>#recommend>li:nth-child(1)>span{
+    color:#df3436;
+}
+.lastestMusic.hot>#recommend>li:nth-child(2)>span{
+    color:#df3436;
+}
+.lastestMusic.hot>#recommend>li:nth-child(3)>span{
+    color:#df3436;
+}
+.collect{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:white;
+    border-top:1px solid #DFDFDF;
+    padding: 3vw 0;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+}
+.collect>a{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4vw;
+    background:#D43B32;
+    padding:0 27vw;
+    color:white;
+    border-radius: 6vw;
+}
+.collect>a>.iconLogo{
+    width:10vw;
+    height:10vw;
+    fill: white;
+}
