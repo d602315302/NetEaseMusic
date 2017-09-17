@@ -176,6 +176,7 @@ header>.titleWrapper>div .headPortrait {
     font-size: 4vw;
     margin-left:2vw;
     margin-right:5vw;
+    width:2vw;
 }
 .lastestMusic.hot>#recommend>li:nth-child(1)>span{
     color:#df3436;
